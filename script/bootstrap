@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+#!/usr/bin/env bash
+
+function bootstrap {
+  local shome="$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"
+  source "$shome/script/profile"
+
+  local url_vault_Darwin='https://releases.hashicorp.com/vault/0.5.0/vault_0.5.0_darwin_amd64.zip'
+  local url_vault_Linux='https://releases.hashicorp.com/vault/0.5.0/vault_0.5.0_linux_amd64.zip'
+
+  local tmp_vault="$(mktemp -t XXXXXX)"
+  trap "$(printf "rm -f '%q'" "$tmp_vault")" EXIT
+  local url_vault="url_vault_$(uname -s)"
+  curl -sS -L -o "$tmp_vault" "${!url_vault}"
+  cd bin
+  unzip -o "$tmp_vault"
+  chmod 755 vault
+}
+
+bootstrap
