@@ -11,7 +11,7 @@ function bootstrap {
 
   local url_vault="url_vault_$(uname -s)"
   local fnm_vault="$(basename "${!url_vault}")"
-  cache curl "$fnm_vault" "${!url_vault}" -sS -L
+  cache curl "$fnm_vault" "${!url_vault}"
   
   pushd bin
   unzip -o "${BASEBOX_CACHE}/curl/$fnm_vault"
