@@ -3,7 +3,7 @@
 #!/usr/bin/env bash
 
 function bootstrap {
-  local shome="$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"
+  local shome="${_vault_home:-"$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"}"
   source "$shome/script/profile"
 
   local url_vault_Darwin='https://releases.hashicorp.com/vault/0.5.0/vault_0.5.0_darwin_amd64.zip'
