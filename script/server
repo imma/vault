@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+function consul_server {
+  local shome="${_consul_home:-"$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"}"
+  source "$shome/script/profile"
+
+  if [[ "$#" == 0 ]]; then
+    set -- default
+  fi
+
+  case "${1:-}" in
+    default|vault)
+      exec vault server -dev
+      ;;
+    *)
+      echo "ERROR: unknown server command: ${1:-/not-supplied/}" 1>&2
+      return 1
+      ;;
+  esac
+}
+
+consul_server "$@"
