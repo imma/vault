@@ -10,7 +10,7 @@ function consul_server {
 
   case "${1:-}" in
     default|vault)
-      exec vault server -dev
+      exec vault server
       ;;
     *)
       echo "ERROR: unknown server command: ${1:-/not-supplied/}" 1>&2
