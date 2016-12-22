@@ -6,8 +6,8 @@ function bootstrap {
   local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
   source "$shome/script/profile"
 
-  local url_vault_Darwin='https://releases.hashicorp.com/vault/0.6.1/vault_0.6.1_darwin_amd64.zip'
-  local url_vault_Linux='https://releases.hashicorp.com/vault/0.6.1/vault_0.6.1_linux_amd64.zip'
+  local url_vault_Darwin="https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_darwin_amd64.zip"
+  local url_vault_Linux="https://releases.hashicorp.com/vault/${VAULT_VERSION}/vault_${VAULT_VERSION}_linux_amd64.zip"
 
   local url_vault="url_vault_$(uname -s)"
   local fnm_vault="$(basename "${!url_vault}")"

@@ -3,6 +3,8 @@
 function _vault_profile {
   local shome="${_vault_home:-"$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"}"
   PATH="$shome/bin:$PATH"
+
+  VAULT_VERSION="0.6.4"
 }
 
 _vault_profile
