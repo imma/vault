@@ -5,6 +5,8 @@ function _vault_profile {
   PATH="$shome/bin:$PATH"
 
   VAULT_VERSION="0.7.3"
+
+  export VAULT_ADDR='http://127.0.0.1:8200'
 }
 
 _vault_profile
