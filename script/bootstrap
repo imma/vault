@@ -14,7 +14,7 @@ function bootstrap {
   cache curl "$fnm_vault" "${!url_vault}"
   
   pushd bin
-  unzip -o "/data/cache/curl/$fnm_vault"
+  unzip -o "${DATA}/cache/curl/$fnm_vault"
   chmod 755 vault
   popd
 }
