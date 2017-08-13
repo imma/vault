@@ -4,7 +4,7 @@ function _vault_profile {
   local shome="${_vault_home:="$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"}"
   PATH="$shome/bin:$PATH"
 
-  VAULT_VERSION="0.7.3"
+  VAULT_VERSION="0.9.0"
 
   export VAULT_ADDR='http://127.0.0.1:8200'
 }
