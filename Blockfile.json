@@ -2,5 +2,7 @@
   "require": [
     "curl"
   ],
-  "versions": {}
+  "versions": {
+    "vault": "hashicorp/vault"
+  }
 }
